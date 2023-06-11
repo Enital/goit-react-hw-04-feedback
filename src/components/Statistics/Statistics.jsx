@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function Statistics({ good, neutral, bad, total, percentage }) {
     if (!percentage) { percentage = 0 };
-    
+
     return (
         <div className={css.section}>           
             <ul className={css.stats}>
