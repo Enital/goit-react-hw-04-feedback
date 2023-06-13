@@ -4,6 +4,11 @@ import PropTypes from 'prop-types';
 
 function Statistics({ good, neutral, bad, total, percentage }) {
     if (!percentage) { percentage = 0 };
+    let spanColor = 'white';
+    let fontColor = 'black';
+    if (percentage <= 33) { spanColor = 'red'; fontColor = 'white'};
+    if(percentage>33 && percentage<=66) spanColor='yellow';
+    if (percentage > 66) { spanColor = 'green'; fontColor = 'white'; }
 
     return (
         <div className={css.section}>           
@@ -13,7 +18,7 @@ function Statistics({ good, neutral, bad, total, percentage }) {
                 <span className={css.stat}>Bad: { bad }</span>
             </ul>
             <span>Total: { total }</span>
-            <span>Positive feedback: { percentage }%</span>
+            <span style={{backgroundColor:spanColor, color: fontColor}}>Positive feedback: { percentage }%</span>
         </div>
     )
 };
