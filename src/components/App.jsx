@@ -13,9 +13,9 @@ export default function App() {
 
   const addReview = event => {
     switch (event.target.textContent) {
-      case 'Good': setGood(state => state+1); break; 
-      case 'Neutral': setNeutral(state => state+1); break;
-      case 'Bad': setBad(state => state+1); break;
+      case 'Good': setGood(prevState => prevState+1); break; 
+      case 'Neutral': setNeutral(prevState => prevState+1); break;
+      case 'Bad': setBad(prevState => prevState+1); break;
       default: return;
     }
   }
